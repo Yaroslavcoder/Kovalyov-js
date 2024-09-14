@@ -1,6 +1,9 @@
+alert('Hello world')
+
 let reduce = Number(prompt('Введи зменшуване'));
 let subtractor = Number(prompt ('Введи від`ємник'));
-alert(`різницею є: ${reduce - subtractor}`);// 1 task
+alert(`різницею є: ${reduce - subtractor}`);
+// 1 task
 
 
 let first = prompt('Введіть перше число');
