@@ -31,3 +31,4 @@ function reverseString() {
 }
 
 alert(reverseString());
+//6 task
