@@ -34,7 +34,7 @@ let youroption = (prompt('Для входу введіть пароль'))
 let attempts = 0;
 let maxAttempts = 3;
 while (attempts < maxAttempts) {
-    if (youroption == correctPassword) {
+    if (youroption === correctPassword) {
         alert("Пароль введено правильно. Доступ надано.");
         break;
     } else {
