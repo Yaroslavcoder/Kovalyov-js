@@ -1,3 +1,7 @@
+//1 завдання виконав у класі
+
+
+//Завдання 2:
 function Person(name){
     this.name = name
 }
@@ -15,11 +19,18 @@ Student.prototype.study = function() {
 };
 const student1 = new Student('Anna', 'Mathematics');
 student1.greet();
-student1.study();//task 2
+student1.study();
+
+
+
+
+// Створення об'єктів без прототипів
 const dictionary = Object.create(null);
 dictionary["apple"] = "A sweet fruit";
 dictionary["book"] = "A set of written or printed pages bound with a cover";
 console.log(dictionary.toString); //undefined
+
+
 
 //Переписати класи на функції-конструктори та прототипи
 function Animal(name) {
