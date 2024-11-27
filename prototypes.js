@@ -37,25 +37,23 @@ function Animal(name) {
   this.name = name;
 }
 
-// Додаємо метод speak до прототипу Animal
+
 Animal.prototype.speak = function() {
   console.log(`${this.name} makes a noise.`);
 };
 
-// Конструктор-функція для Dog
+
 function Dog(name) {
-  this.name = name; // Встановлюємо name без виклику Animal
+  this.name = name; 
 }
 
-// Наслідуємо прототип Animal
 Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype.constructor = Dog;
 
-// Перевизначаємо метод speak у прототипі Dog
+
 Dog.prototype.speak = function() {
   console.log(`${this.name} barks.`);
 };
 
-// Створюємо екземпляр Dog і викликаємо метод speak
 const dog = new Dog('Rex');
 dog.speak(); // Rex barks
