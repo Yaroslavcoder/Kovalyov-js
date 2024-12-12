@@ -42,7 +42,7 @@ console.log(filterOddNumbers(numbers));// 7 task
 
 
 
-//Обчислення площі фігур
+
 const width1 = 5;
 const height1 = 10;
 const area1 = width1 * height1;
@@ -95,7 +95,6 @@ console.log(formtMessage3);
 
 
 
-//Перевірка віку
 const age1 = 20;
 const age2 = 17;
 const age3 = 18;
@@ -117,7 +116,8 @@ if (age3 >= 18) {
 } else {
     console.log("Користувач неповнолітній");
 }
-//перевірка віку без функцій
+
+
 
 function checkAge(age) {
     if (age >= 18) {
