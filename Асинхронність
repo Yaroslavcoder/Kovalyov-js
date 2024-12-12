@@ -1,0 +1,69 @@
+function repeatMessage() {
+    setTimeout(() => {
+        console.log('Повідомлення ');
+    }, 2000);
+};
+repeatMessage() // task 1 
+
+
+
+function fetchUser(userId){
+    return new Promise((resolve, reject) => {
+        setTimeout(() =>{
+            if(userId < 100 ){
+                resolve({ id: userId, name: "Користувач #" + userId });
+            }else{
+                reject(new Error("ID користувача має бути менше 100"));
+            }
+        }, 1000 );
+    });
+}
+fetchUser(52)
+.then((user) => {
+  console.log("Завантажено користувача:", user);
+})
+.catch((error) => {
+  console.error("Помилка:", error.message);
+}); //task 2
+
+
+
+function fetchUsers(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() =>{
+            resolve(["User1", "User2", "User3"]);
+        }, 1000)
+    })
+}
+function fetchPosts() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(["Post1", "Post2", "Post3"]);
+      }, 1400);
+    });
+  }
+function fetchComents() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(["Coment1", "Coment2", "Coment3"]);
+      }, 500);
+    });
+  }
+async function fetchAllData() {
+    const [users, posts, comments] = await Promise.all([
+    fetchUsers(),
+    fetchPosts(),
+    fetchComents(),
+    ]);
+    return{users, posts, comments }
+}
+(async () => {
+    try {
+      const data = await fetchAllData();
+      console.log("Користувачі:", data.users);
+      console.log("Пости:", data.posts);
+      console.log("Коментарі:", data.comments);
+    } catch (error) {
+      console.error("Сталася помилка:", error);
+    }
+  })(); // task 3
